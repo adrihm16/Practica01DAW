@@ -1,0 +1,24 @@
+site_name: Calculadora Java
+site_description: Documentación de la calculadora simple en Java
+site_author: Adrián Herrera
+
+theme:
+  name: material
+  palette:
+    primary: red      # Color principal
+    accent: red       # Color de acento opcional
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+nav:
+  - Inicio: index.md
+  - Guía de Uso: guia-uso.md
+  - API Javadoc:
+      - API: api/index.html
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
