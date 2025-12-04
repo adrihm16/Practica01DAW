@@ -27,8 +27,6 @@ mkdocs build
 
 # 4. Probar el sitio en local (verificar contenido y rutas)
 mkdocs serve
-````
-
 ---
 
 ## b) Ejemplos de código documentado
@@ -243,6 +241,7 @@ Este workflow implementa CI/CD porque:
 
 ```
 ```
+
 
 
 
