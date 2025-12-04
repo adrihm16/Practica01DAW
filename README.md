@@ -239,8 +239,7 @@ Este workflow implementa CI/CD porque:
 * GitHub Pages permite distribuir doc sin entregar código, con navegación web ligera.
 * Un workflow correctamente configurado implementa CI/CD aplicado a documentación, ya que emplea automatización y despliegue continuo a un entorno público sin procesos manuales.
 
-```
-```
+
 
 
 
