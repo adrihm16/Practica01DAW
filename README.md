@@ -1,4 +1,4 @@
-````markdown
+
 # Calculadora Java
 
 ## Descripción
@@ -14,7 +14,7 @@ Incluye API técnica generada con Javadoc y un sitio de documentación estático
 - **MkDocs Material** (para generar un sitio web de documentación)
 
 ### a.1) Comandos ejecutados para generar documentación localmente
-```bash
+
 # 1. Compilar código Java
 javac src/calculadora/*.java
 
@@ -243,5 +243,6 @@ Este workflow implementa CI/CD porque:
 
 ```
 ```
+
 
 
