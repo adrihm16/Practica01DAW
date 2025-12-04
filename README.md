@@ -32,28 +32,7 @@ mkdocs serve
 ---
 
 ## b) Ejemplos de código documentado
-
-### b.1) Python (ejemplo genérico de docstring estilo Google Style)
-
-Archivo fuente: `docs/examples/python_example.py`
-
-```python
-def ejemplo(a: int, b: int) -> int:
-    """
-    Suma dos números enteros y devuelve el resultado.
-
-    :param a: Primer número a sumar.
-    :param b: Segundo número a sumar.
-    :return: La suma de a y b.
-
-    Estilo usado: Google Style + docstrings con reStructuredText.
-    """
-    return a + b
-```
-
-### b.2) Java (código documentado con JavaDoc)
-
-Archivo fuente real: `src/calculadora/Calculadora.java`
+`src/calculadora/Calculadora.java`
 
 ```java
 /**
@@ -90,45 +69,13 @@ public class Calculadora {
 }
 ```
 
-### b.3) JavaScript/TypeScript (ejemplo genérico de JSDoc/TSDoc)
-
-Archivo fuente: `docs/examples/js_example.js`
-
-```javascript
-/**
- * Suma dos valores numéricos.
- *
- * @param {number} a primer número
- * @param {number} b segundo número
- * @returns {number} resultado de a + b
- * @throws {Error} si los parámetros no son números
- *
- * Estilo usado: JSDoc
- */
-function suma(a, b) {
-  if (typeof a !== "number" || typeof b !== "number") {
-    throw new Error("Los parámetros deben ser números");
-  }
-  return a + b;
-}
-```
-
-**Resumen de estilos usados**
-
-| Lenguaje              | Estilo usado                                                       |
-| --------------------- | ------------------------------------------------------------------ |
-| Python                | Docstrings + `:param`, `:return` (Google Style / reStructuredText) |
-| Java                  | JavaDoc (`@param`, `@return`, `@throws`, `@author`, `@version`)    |
-| JavaScript/TypeScript | JSDoc/TSDoc (`@param`, `@returns`, `@throws`)                      |
-
----
 
 ## c) Acceso público a la documentación desplegada
 
 * Sitio de documentación completo (MkDocs + API Javadoc):
-  `https://<tu-usuario>.github.io/<tu-repo>/`
+  `https://adrihm16.github.io/Practica01DAW/`
 * API técnica Javadoc:
-  `https://<tu-usuario>.github.io/<tu-repo>/api/index.html`
+  `https://adrihm16.github.io/Practica01DAW/api/package-summary.html`
 
 ---
 
@@ -191,9 +138,7 @@ Source: Deploy from a branch → gh-pages → /(root)
 
 ---
 
-## e) Mensajes de commit recomendados (en imperativo)
-
-Los siguientes commits evidencian mejoras, configuración y despliegue:
+## e) Mensajes de commit recomendados 
 
 ```
 Add Calculadora class with operations
@@ -205,12 +150,7 @@ Enable GitHub Pages deployment from gh-pages branch
 
 ### e.1) Justificación
 
-Son claros porque:
-
-* Usan verbos en **imperativo**
-* Son **descriptivos**
-* Explican acciones concretas del cambio
-* No son ambiguos y permiten rastrear la evolución del CI/CD y despliegue
+Son claros porque usan verbos en imperativo, son descriptivos, explican acciones concretas del cambio y además no son ambiguos y permiten ver la evolución del CI/CD y despliegue
 
 ---
 
@@ -248,7 +188,7 @@ http://127.0.0.1:8000/api/index.html
 
 GitHub Pages permite:
 
-* Compartir documentación **siempre actualizada**
+* Compartir documentación siempre actualizada
 * Acceso público a la web sin necesidad de clonar el proyecto
 * Navegación visual del API y la guía de uso
 * Servir recursos estáticos de forma eficiente
@@ -262,8 +202,8 @@ GitHub Pages permite:
 
 ### g.2) Accesibilidad y seguridad
 
-* El **sitio GitHub Pages es público**, accesible para cualquier usuario
-* El **código fuente del repositorio puede mantenerse privado**
+* El sitio GitHub Pages es público, accesible para cualquier usuario
+* El código fuente del repositorio puede mantenerse privado
 * Así se garantiza que la documentación es visible para todos, pero el código solo para autorizados
 
 ---
@@ -272,10 +212,10 @@ GitHub Pages permite:
 
 Este workflow implementa CI/CD porque:
 
-* Ejecuta **compilación y generación automática de documentación**
+* Ejecuta compilación y generación automática de documentación
 * Se dispara por cada `push a main`
 * Publica automáticamente a GitHub Pages sin intervención manual
-* Es **despliegue continuo** porque cada cambio integrado despliega la documentación actualizada al entorno público sin pasos adicionales
+* Es despliegue continuo porque cada cambio integrado despliega la documentación actualizada al entorno público sin pasos adicionales
 
 ---
 
@@ -285,25 +225,23 @@ Este workflow implementa CI/CD porque:
 
 | CE | Pregunta                                                          | Respuesta                                                                                                                                                                                                |
 | -- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| a  | ¿Qué herramienta utilizaste para crear la doc HTML?               | Usé **Javadoc** para la API de Java, y **MkDocs Material** para el sitio web.                                                                                                                            |
-| b  | Muestra un fragmento documentado y comenta su estilo              | Se mostró código de Java en `Calculadora.java` con JavaDoc usando `@param`, `@return`, `@throws`. Estilo: **JavaDoc**.                                                                                   |
+| a  | ¿Qué herramienta utilizaste para crear la doc HTML?               | Usé Javadoc para la API de Java,  MkDocs Material para el sitio web.                                                                                                                            |
+| b  | Muestra un fragmento documentado y comenta su estilo              | Se mostró código de Java en `Calculadora.java` con JavaDoc usando `@param`, `@return`, `@throws`. Estilo: JavaDoc.                                                                                   |
 | c  | ¿Qué configuración usaste para publicar la doc en GitHub Pages?   | Usé un workflow que hace `mkdocs build` y despliega `site/` con la acción `peaceiris/actions-gh-pages@v3`, publicando a la branch `gh-pages`, y configuré GitHub Pages para servir esa branch desde `/`. |
 | d  | ¿Qué ventajas ofrece GitHub Pages para compartir doc?             | Permite ver la documentación sin clonar el repo, mantenerla siempre actualizada, dar navegación web, y facilitar la colaboración externa sin exponer el código.                                          |
 | e  | ¿Son tus mensajes de commit claros e imperativos? Justifica       | Sí, porque describen acciones concretas en imperativo y documentan hitos del despliegue y configuración CI/CD sin ambigüedad.                                                                            |
-| f  | ¿Cómo garantizas documentación pública pero código seguro?        | Manteniendo el repositorio **privado** y GitHub Pages **público**, lo que permite compartir doc sin dar acceso al código fuente.                                                                         |
+| f  | ¿Cómo garantizas documentación pública pero código seguro?        | Manteniendo el repositorio privado y GitHub Pages público, lo que permite compartir doc sin dar acceso al código fuente.                                                                         |
 | g  | ¿Dónde en tu README explicas acceso a la doc y comandos usados?   | Secciones: `Documentación HTML`, `Acceso público`, `Clonar y regenerar`. Ahí se detalla todo.                                                                                                            |
-| h  | ¿Qué evento dispara el workflow? ¿Por qué es despliegue continuo? | El evento es **push a main**. Es despliegue continuo porque genera y publica la documentación automáticamente a GitHub Pages tras integrar cambios.                                                      |
+| h  | ¿Qué evento dispara el workflow? ¿Por qué es despliegue continuo? | El evento es push a main. Es despliegue continuo porque genera y publica la documentación automáticamente a GitHub Pages tras integrar cambios.                                                      |
 
 ---
 
-### Conclusiones de aprendizaje
-
-Aprendí que:
-
-* La documentación puede generarse automáticamente en cada integración (`push`), lo que mejora la trazabilidad y elimina errores humanos.
-* GitHub Pages permite **distribuir doc sin entregar código**, con navegación web ligera.
-* Un workflow correctamente configurado implementa **CI/CD aplicado a documentación**, ya que emplea automatización y despliegue continuo a un entorno público sin procesos manuales.
+### Conclusiones
+* La documentación puede generarse automáticamente en cada integración (`push`), lo que agiliza el trabjo y elimina errores humanos.
+* GitHub Pages permite distribuir doc sin entregar código, con navegación web ligera.
+* Un workflow correctamente configurado implementa CI/CD aplicado a documentación, ya que emplea automatización y despliegue continuo a un entorno público sin procesos manuales.
 
 ```
 ```
+
 
